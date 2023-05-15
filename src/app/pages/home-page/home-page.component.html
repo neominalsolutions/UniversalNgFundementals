@@ -1,0 +1,18 @@
+<p>Anasayfa</p>
+
+<!-- hidden attribute angularda display style değiştren bir directive'dir -->
+
+<p [hidden]="!visible">
+  İçerik
+</p>
+
+
+
+<!-- static attribute binding -->
+<app-block-button color="red" text="Göster/Gizle" (onClick)="showHide()"></app-block-button>
+
+<!-- dynamic attribute binding -->
+<app-block-button [color]="btnColor" text="Button2" (onClick)="btnClick()"></app-block-button>
+
+<!-- city-selector -->
+<app-selector [dataSource]="cityMaps" (onSelect)="onCitySelect($event)"></app-selector>
