@@ -36,8 +36,11 @@ export class HomePageComponent {
     } as SelectorType; // type casting işlemi
   });
 
-  onCitySelect($event: string) {
-    console.log('value', $event);
+  selectedCity!: string;
+
+  onCitySelect(value: string) {
+    console.log('value', value);
+    this.selectedCity = value;
   }
 
   visible: boolean = false; // initial state false
