@@ -15,12 +15,11 @@ export class SiteLayoutComponent implements OnInit {
     this.items = [
       {
         label: 'Hakkımızda',
-        routerLink: ['/about'],
         icon: 'pi pi-fw pi-about',
+        routerLink: ['/about'],
         items: [
           {
             label: 'Vizyonumuz',
-            url: '#',
           },
           {
             label: 'Misyonumuz',
