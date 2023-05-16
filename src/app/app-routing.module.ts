@@ -8,6 +8,7 @@ import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.compone
 import { AdminHomePageComponent } from './pages/admin-home-page/admin-home-page.component';
 import { AdminUserPageComponent } from './pages/admin-user-page/admin-user-page.component';
 import { AdminRolePageComponent } from './pages/admin-role-page/admin-role-page.component';
+import { UserCardPageComponent } from './pages/user-card-page/user-card-page.component';
 
 const routes: Routes = [
   {
@@ -17,14 +18,25 @@ const routes: Routes = [
       {
         path: '', // bu layout ilk açılış sayfası olacağı için
         component: HomePageComponent,
+        data: {
+          title: 'Anasayfa',
+        },
       },
       {
         path: 'about',
         component: AboutPageComponent,
+        data: {
+          // sayfa geçişlerinde componentere sabit verileri taşırız
+          title: 'Hakkımızda',
+          permissions: ['user-create', 'user-delete'],
+        },
       },
       {
         path: 'contact',
         component: ContactPageComponent,
+        data: {
+          title: 'iletişim',
+        },
       },
     ],
   },
@@ -39,6 +51,10 @@ const routes: Routes = [
       {
         path: 'users', // Admin Users page
         component: AdminUserPageComponent,
+      },
+      {
+        path: 'user-card/:id/:username', // admin/user-detail/1000/ali.c
+        component: UserCardPageComponent,
       },
       {
         path: 'roles', // Admin Roles page

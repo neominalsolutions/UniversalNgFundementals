@@ -1,27 +1,20 @@
-import {
-  Component,
-  Directive,
-  Injectable,
-  NgModule,
-  Pipe,
-} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { ButtonModule } from 'primeng/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { AboutPageComponent } from './pages/about-page/about-page.component';
-import { ContactPageComponent } from './pages/contact-page/contact-page.component';
-import { BlockButtonComponent } from './components/block-button/block-button.component';
-import { SelectorComponent } from './components/selector/selector.component';
-import { ButtonModule } from 'primeng/button';
 import { UniModule } from './components/uni.module';
 import { LayoutModule } from './layout/layout.module';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { AdminHomePageComponent } from './pages/admin-home-page/admin-home-page.component';
-import { AdminUserPageComponent } from './pages/admin-user-page/admin-user-page.component';
 import { AdminRolePageComponent } from './pages/admin-role-page/admin-role-page.component';
+import { AdminUserPageComponent } from './pages/admin-user-page/admin-user-page.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { UserCardPageComponent } from './pages/user-card-page/user-card-page.component';
 // @ile tanımlanmış yapılar bir sınıfın angular tarafında farklı şekilde hizmet vermesini sağlar decorator denir
-
+import { TableModule } from 'primeng/table';
 @NgModule({
   declarations: [
     // uygulama içerisindeki component,directive,pipe buraya tanımlar.
@@ -32,6 +25,7 @@ import { AdminRolePageComponent } from './pages/admin-role-page/admin-role-page.
     AdminHomePageComponent,
     AdminUserPageComponent,
     AdminRolePageComponent,
+    UserCardPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +33,7 @@ import { AdminRolePageComponent } from './pages/admin-role-page/admin-role-page.
     ButtonModule,
     UniModule,
     LayoutModule,
+    TableModule,
   ],
   providers: [], // uygulama içerisindeki hizmetlerimiz buraya yazıyoruz
   bootstrap: [AppComponent], // uygulama ilk bu component çalıştır
