@@ -15,6 +15,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { UserCardPageComponent } from './pages/user-card-page/user-card-page.component';
 // @ile tanımlanmış yapılar bir sınıfın angular tarafında farklı şekilde hizmet vermesini sağlar decorator denir
 import { TableModule } from 'primeng/table';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 @NgModule({
   declarations: [
     // uygulama içerisindeki component,directive,pipe buraya tanımlar.
@@ -26,6 +27,7 @@ import { TableModule } from 'primeng/table';
     AdminUserPageComponent,
     AdminRolePageComponent,
     UserCardPageComponent,
+    NotFoundPageComponent,
   ],
   imports: [
     BrowserModule,

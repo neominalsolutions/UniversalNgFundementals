@@ -9,6 +9,7 @@ import { AdminHomePageComponent } from './pages/admin-home-page/admin-home-page.
 import { AdminUserPageComponent } from './pages/admin-user-page/admin-user-page.component';
 import { AdminRolePageComponent } from './pages/admin-role-page/admin-role-page.component';
 import { UserCardPageComponent } from './pages/user-card-page/user-card-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
         component: AdminRolePageComponent,
       },
     ],
+  },
+  {
+    path: '**',
+    component: NotFoundPageComponent,
   },
 ];
 
