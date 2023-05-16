@@ -3,19 +3,48 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { SiteLayoutComponent } from './layout/site-layout/site-layout.component';
+import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
+import { AdminHomePageComponent } from './pages/admin-home-page/admin-home-page.component';
+import { AdminUserPageComponent } from './pages/admin-user-page/admin-user-page.component';
+import { AdminRolePageComponent } from './pages/admin-role-page/admin-role-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePageComponent,
+    component: SiteLayoutComponent,
+    children: [
+      {
+        path: '', // bu layout ilk açılış sayfası olacağı için
+        component: HomePageComponent,
+      },
+      {
+        path: 'about',
+        component: AboutPageComponent,
+      },
+      {
+        path: 'contact',
+        component: ContactPageComponent,
+      },
+    ],
   },
   {
-    path: 'about',
-    component: AboutPageComponent,
-  },
-  {
-    path: 'contact',
-    component: ContactPageComponent,
+    path: 'admin',
+    component: AdminLayoutComponent,
+    children: [
+      {
+        path: '', // Admin Home page
+        component: AdminHomePageComponent,
+      },
+      {
+        path: 'users', // Admin Users page
+        component: AdminUserPageComponent,
+      },
+      {
+        path: 'roles', // Admin Roles page
+        component: AdminRolePageComponent,
+      },
+    ],
   },
 ];
 

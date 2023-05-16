@@ -9,7 +9,9 @@ import { MenuItem } from 'primeng/api';
 export class SiteLayoutComponent implements OnInit {
   items!: MenuItem[];
 
+  // Hook componentlere davranış kazandıran yapılar.
   ngOnInit(): void {
+    console.log('ngOnit Menubar');
     // component ilk load olurken yapılacak olan işlemleri yazıyoruz.
     // component doma girerken apidan load edilecek olan verileri burada tanımlarız
     this.items = [
@@ -41,6 +43,11 @@ export class SiteLayoutComponent implements OnInit {
         label: 'Google',
         url: 'https://www.google.com',
         icon: 'pi pi-fw pi-google',
+      },
+      {
+        label: 'Yönetim Paneli',
+        routerLink: ['admin'],
+        icon: 'pi pi-fw pi-users',
       },
     ];
   }

@@ -17,6 +17,9 @@ import { SelectorComponent } from './components/selector/selector.component';
 import { ButtonModule } from 'primeng/button';
 import { UniModule } from './components/uni.module';
 import { LayoutModule } from './layout/layout.module';
+import { AdminHomePageComponent } from './pages/admin-home-page/admin-home-page.component';
+import { AdminUserPageComponent } from './pages/admin-user-page/admin-user-page.component';
+import { AdminRolePageComponent } from './pages/admin-role-page/admin-role-page.component';
 // @ile tanımlanmış yapılar bir sınıfın angular tarafında farklı şekilde hizmet vermesini sağlar decorator denir
 
 @NgModule({
@@ -26,6 +29,9 @@ import { LayoutModule } from './layout/layout.module';
     HomePageComponent,
     AboutPageComponent,
     ContactPageComponent,
+    AdminHomePageComponent,
+    AdminUserPageComponent,
+    AdminRolePageComponent,
   ],
   imports: [
     BrowserModule,
