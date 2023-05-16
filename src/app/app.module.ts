@@ -16,6 +16,7 @@ import { BlockButtonComponent } from './components/block-button/block-button.com
 import { SelectorComponent } from './components/selector/selector.component';
 import { ButtonModule } from 'primeng/button';
 import { UniModule } from './components/uni.module';
+import { LayoutModule } from './layout/layout.module';
 // @ile tanımlanmış yapılar bir sınıfın angular tarafında farklı şekilde hizmet vermesini sağlar decorator denir
 
 @NgModule({
@@ -31,6 +32,7 @@ import { UniModule } from './components/uni.module';
     AppRoutingModule, // Bir module başka bir module altındaki bileşenleri referans aalbilir. Dışarıdan npm i ile yüklenen paketlere ait modulleri tanımlarız.
     ButtonModule,
     UniModule,
+    LayoutModule,
   ],
   providers: [], // uygulama içerisindeki hizmetlerimiz buraya yazıyoruz
   bootstrap: [AppComponent], // uygulama ilk bu component çalıştır
