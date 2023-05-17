@@ -1,5 +1,11 @@
-<div>
+<div *ngIf="user">
   <label>UserId: {{user.id}}</label>
   <br>
   <label>UserName: {{user.username}}</label>
+</div>
+
+<div>
+  <label>UserId: {{user?.id}}</label>
+  <br>
+  <label>UserName: {{user?.username}}</label>
 </div>

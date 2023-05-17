@@ -43,7 +43,9 @@ export class AdminUserPageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnDestroy(): void {
-    this.userLoadSubs.unsubscribe();
+    // if (this.userLoadSubs != undefined) {
+    // this.userLoadSubs.unsubscribe();
+    // }
   }
 
   fetchSampleLoadData() {

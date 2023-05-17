@@ -21,7 +21,7 @@ export class UserService {
 
   getUserById(id: number): Observable<User> {
     return this.httpClient
-      .get<User>(`https://jsonplaceholder.typicode.com/users?userId=${id}`)
+      .get<User>(`https://jsonplaceholder.typicode.com/users/${id}`)
       .pipe(take(1), retry(3)); // herhangi bir network kesintisini handle edebilmek için retry policy yaptık.
     // $"deneme_{id}"
   }
