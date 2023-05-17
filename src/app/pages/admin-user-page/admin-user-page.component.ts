@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subscription, map, of, take } from 'rxjs';
+import { UserService } from 'src/app/services/user.service';
 export interface User {
   id: number;
   name?: string;
@@ -36,7 +37,10 @@ export class AdminUserPageComponent implements OnInit, OnDestroy {
   ];
   userLoadSubs!: Subscription;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private userService: UserService
+  ) {}
 
   ngOnDestroy(): void {
     this.userLoadSubs.unsubscribe();
@@ -173,7 +177,12 @@ export class AdminUserPageComponent implements OnInit, OnDestroy {
     // this.fetchSampleLoadData();
     // this.asyncAwaitLoadDate();
     // ES7 async await yöntemi geldi.
-    this.loadDataWithHttpClient();
+    // this.loadDataWithHttpClient();
+    this.userService.getUsers().subscribe({
+      next: (data: User[]) => {
+        this.users = data;
+      },
+    });
   }
 
   async asyncAwaitLoadData() {
