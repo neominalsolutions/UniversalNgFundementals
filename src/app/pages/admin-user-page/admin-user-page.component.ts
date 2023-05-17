@@ -95,8 +95,7 @@ export class AdminUserPageComponent implements OnInit {
           return value.map((item: number) => {
             return item * 5;
           });
-        }),
-      
+        })
       )
       .subscribe({
         // veri akışına bağlandığımız yer
@@ -159,6 +158,8 @@ export class AdminUserPageComponent implements OnInit {
           console.log('işlem bitti'); // finally blogu
         },
       });
+
+    // sub.unsubscribe();
   }
 
   async ngOnInit() {

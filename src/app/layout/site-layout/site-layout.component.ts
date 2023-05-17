@@ -49,6 +49,11 @@ export class SiteLayoutComponent implements OnInit {
         routerLink: ['admin'],
         icon: 'pi pi-fw pi-users',
       },
+      {
+        label: 'Reactive Programlama',
+        routerLink: ['rxjs'],
+        icon: 'pi pi-fw pi-code',
+      },
     ];
   }
 }
