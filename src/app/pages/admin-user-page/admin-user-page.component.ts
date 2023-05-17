@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, of } from 'rxjs';
+import { Observable, Subscription, map, of, take } from 'rxjs';
 export interface User {
   id: number;
   name?: string;
@@ -13,7 +13,7 @@ export interface User {
   templateUrl: './admin-user-page.component.html',
   styleUrls: ['./admin-user-page.component.scss'],
 })
-export class AdminUserPageComponent implements OnInit {
+export class AdminUserPageComponent implements OnInit, OnDestroy {
   users: User[] = [
     {
       id: 1,
@@ -34,8 +34,13 @@ export class AdminUserPageComponent implements OnInit {
       username: 'mustafa.c',
     },
   ];
+  userLoadSubs!: Subscription;
 
   constructor(private httpClient: HttpClient) {}
+
+  ngOnDestroy(): void {
+    this.userLoadSubs.unsubscribe();
+  }
 
   fetchSampleLoadData() {
     // ES6
@@ -136,13 +141,14 @@ export class AdminUserPageComponent implements OnInit {
   }
 
   loadDataWithHttpClient() {
-    this.httpClient
+    this.userLoadSubs = this.httpClient
       .get('https://jsonplaceholder.typicode.com/users', {
         headers: {
           Authorization: 'Bearer TokenValue',
           ContentType: 'application-json',
         },
-      }) // Observable takip edilecek bir tip döndürüyor.
+      })
+      .pipe(take(1)) // Subscription sonlandırmak için bir teknik unutmayalım yada OnDestroy kısmında unsubscribe() yazalım.
       .subscribe({
         //  burdaki işlemi takibe al
         next: (response: any) => {
