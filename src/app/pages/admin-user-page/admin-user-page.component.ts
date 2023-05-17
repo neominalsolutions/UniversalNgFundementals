@@ -95,7 +95,8 @@ export class AdminUserPageComponent implements OnInit {
           return value.map((item: number) => {
             return item * 5;
           });
-        })
+        }),
+      
       )
       .subscribe({
         // veri akışına bağlandığımız yer
