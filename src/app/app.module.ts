@@ -16,6 +16,7 @@ import { UserCardPageComponent } from './pages/user-card-page/user-card-page.com
 // @ile tanımlanmış yapılar bir sınıfın angular tarafında farklı şekilde hizmet vermesini sağlar decorator denir
 import { TableModule } from 'primeng/table';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     // uygulama içerisindeki component,directive,pipe buraya tanımlar.
@@ -36,6 +37,7 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
     UniModule,
     LayoutModule,
     TableModule,
+    HttpClientModule, // Http işlemlerini yapmak için geliştirilmiş bir module httpclient service bağlantı bu module üzerinden sağlanıyor.
   ],
   providers: [], // uygulama içerisindeki hizmetlerimiz buraya yazıyoruz
   bootstrap: [AppComponent], // uygulama ilk bu component çalıştır
