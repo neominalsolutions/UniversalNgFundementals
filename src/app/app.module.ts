@@ -28,9 +28,9 @@ import { registerLocaleData } from '@angular/common';
 
 import localeTr from '@angular/common/locales/tr';
 import localeFr from '@angular/common/locales/fr';
-import { LoginService } from './services/login.service';
 import { HttpProtocolPipe } from './pipes/http-protocol.pipe';
 import { PipesComponent } from './pipes/localization/pipes.component';
+import { LinkDirective } from './directives/link.directive';
 
 registerLocaleData(localeTr);
 registerLocaleData(localeFr);
@@ -50,6 +50,7 @@ registerLocaleData(localeFr);
     LoginPageComponent,
     HttpProtocolPipe,
     PipesComponent,
+    LinkDirective,
   ],
   imports: [
     BrowserModule,

@@ -2,12 +2,14 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subscription, map, of, take } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
+import { ProtocolTypes } from 'src/app/pipes/http-protocol.pipe';
 export interface User {
   id: number;
   name?: string;
   surname?: string;
   username: string;
   email?: string;
+  website?: string;
 }
 
 @Component({
@@ -15,27 +17,14 @@ export interface User {
   styleUrls: ['./admin-user-page.component.scss'],
 })
 export class AdminUserPageComponent implements OnInit, OnDestroy {
-  users: User[] = [
-    {
-      id: 1,
-      name: 'ali',
-      surname: 'can',
-      username: 'ali.c',
-    },
-    {
-      id: 2,
-      name: 'ahmet',
-      surname: 'caN',
-      username: 'ahmet.c',
-    },
-    {
-      id: 3,
-      name: 'mustafa',
-      surname: 'şAn',
-      username: 'mustafa.c',
-    },
-  ];
+  users: User[] = [];
   userLoadSubs!: Subscription;
+
+  // enumları template gösterme için getter yazıyoruz.
+  // enum tiplerine template üzerinden erişemiyoruz.
+  public get ProtocolTypes() {
+    return ProtocolTypes;
+  }
 
   constructor(
     private httpClient: HttpClient,
