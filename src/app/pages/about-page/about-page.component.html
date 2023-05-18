@@ -2,6 +2,10 @@
 
 
 <div class="card flex justify-content-center">
-  <p-button label="Check" icon="pi pi-check"></p-button>
-</div>
+  <!-- | async pipe observable veya subject tipinde değerlere tempate üzerinden subscribe olabiliriz -->
+  <p-button label="{{counterState.counterSub | async}}" icon="pi pi-check">
 
+  </p-button>
+
+  <a pButton [routerLink]="['/counters']">Sayac Sayfası</a>
+</div>

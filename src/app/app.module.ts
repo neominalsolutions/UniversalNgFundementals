@@ -17,7 +17,7 @@ import { UserCardPageComponent } from './pages/user-card-page/user-card-page.com
 import { TableModule } from 'primeng/table';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { PanelModule } from 'primeng/panel';
 import { InputTextModule } from 'primeng/inputtext';
@@ -31,6 +31,7 @@ import localeFr from '@angular/common/locales/fr';
 import { HttpProtocolPipe } from './pipes/http-protocol.pipe';
 import { PipesComponent } from './pipes/localization/pipes.component';
 import { LinkDirective } from './directives/link.directive';
+import { CounterPageComponent } from './pages/counter-page/counter-page.component';
 
 registerLocaleData(localeTr);
 registerLocaleData(localeFr);
@@ -51,6 +52,7 @@ registerLocaleData(localeFr);
     HttpProtocolPipe,
     PipesComponent,
     LinkDirective,
+    CounterPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +67,7 @@ registerLocaleData(localeFr);
     InputTextModule,
     PasswordModule,
     BrowserAnimationsModule, // PrimeNg animasyonlar için
+    FormsModule, //NgModel kullanımı için ekledik.
   ],
   providers: [
     {

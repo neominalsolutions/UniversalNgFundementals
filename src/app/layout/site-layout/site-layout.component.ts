@@ -87,6 +87,11 @@ export class SiteLayoutComponent implements OnInit {
         routerLink: ['pipes'],
         icon: 'pi pi-fw pi-code',
       },
+      {
+        label: 'Counter Subject Örneği',
+        routerLink: ['counters'],
+        icon: 'pi pi-fw pi-code',
+      },
     ];
   }
 }

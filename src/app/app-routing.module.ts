@@ -14,6 +14,7 @@ import { ReactiveProgramlamaComponent } from './pages/reactive-programlama/react
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AdminPanelGuard } from './guards/admin-panel.guard';
 import { PipesComponent } from './pipes/localization/pipes.component';
+import { CounterPageComponent } from './pages/counter-page/counter-page.component';
 
 const routes: Routes = [
   {
@@ -79,6 +80,10 @@ const routes: Routes = [
   {
     path: 'pipes',
     component: PipesComponent,
+  },
+  {
+    path: 'counters',
+    component: CounterPageComponent,
   },
   {
     path: '**',
