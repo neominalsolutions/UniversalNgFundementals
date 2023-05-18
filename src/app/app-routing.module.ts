@@ -11,6 +11,7 @@ import { AdminRolePageComponent } from './pages/admin-role-page/admin-role-page.
 import { UserCardPageComponent } from './pages/user-card-page/user-card-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { ReactiveProgramlamaComponent } from './pages/reactive-programlama/reactive-programlama.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 const routes: Routes = [
   {
@@ -67,6 +68,10 @@ const routes: Routes = [
   {
     path: 'rxjs',
     component: ReactiveProgramlamaComponent,
+  },
+  {
+    path: 'login',
+    component: LoginPageComponent,
   },
   {
     path: '**',

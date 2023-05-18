@@ -17,6 +17,12 @@ import { UserCardPageComponent } from './pages/user-card-page/user-card-page.com
 import { TableModule } from 'primeng/table';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { PanelModule } from 'primeng/panel';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     // uygulama içerisindeki component,directive,pipe buraya tanımlar.
@@ -29,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     AdminRolePageComponent,
     UserCardPageComponent,
     NotFoundPageComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +45,11 @@ import { HttpClientModule } from '@angular/common/http';
     LayoutModule,
     TableModule,
     HttpClientModule, // Http işlemlerini yapmak için geliştirilmiş bir module httpclient service bağlantı bu module üzerinden sağlanıyor.
+    ReactiveFormsModule, // reactive form işlemlerini yönettiğimiz module
+    PanelModule,
+    InputTextModule,
+    PasswordModule,
+    BrowserAnimationsModule, // PrimeNg animasyonlar için
   ],
   providers: [], // uygulama içerisindeki hizmetlerimiz buraya yazıyoruz
   bootstrap: [AppComponent], // uygulama ilk bu component çalıştır

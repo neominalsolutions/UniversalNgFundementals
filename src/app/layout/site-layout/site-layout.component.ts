@@ -12,9 +12,21 @@ export class SiteLayoutComponent implements OnInit {
   // Hook componentlere davranış kazandıran yapılar.
   ngOnInit(): void {
     console.log('ngOnit Menubar');
+
+    const user = JSON.parse(localStorage.getItem('userInfo') as any);
+
     // component ilk load olurken yapılacak olan işlemleri yazıyoruz.
     // component doma girerken apidan load edilecek olan verileri burada tanımlarız
     this.items = [
+      {
+        label: user.email,
+        icon: 'pi pi-fw pi-user',
+      },
+      {
+        label: 'Yönetim Paneli',
+        icon: 'pi pi-fw pi-lock',
+        routerLink: ['admin'],
+      },
       {
         label: 'Hakkımızda',
         icon: 'pi pi-fw pi-about',
