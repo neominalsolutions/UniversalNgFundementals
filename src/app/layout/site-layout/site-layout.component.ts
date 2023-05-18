@@ -82,6 +82,11 @@ export class SiteLayoutComponent implements OnInit {
         routerLink: ['rxjs'],
         icon: 'pi pi-fw pi-code',
       },
+      {
+        label: 'Pipes Örneği',
+        routerLink: ['pipes'],
+        icon: 'pi pi-fw pi-code',
+      },
     ];
   }
 }

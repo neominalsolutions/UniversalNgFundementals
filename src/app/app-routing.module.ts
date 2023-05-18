@@ -13,6 +13,7 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { ReactiveProgramlamaComponent } from './pages/reactive-programlama/reactive-programlama.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AdminPanelGuard } from './guards/admin-panel.guard';
+import { PipesComponent } from './pipes/localization/pipes.component';
 
 const routes: Routes = [
   {
@@ -74,6 +75,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageComponent,
+  },
+  {
+    path: 'pipes',
+    component: PipesComponent,
   },
   {
     path: '**',

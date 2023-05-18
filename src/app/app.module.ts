@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { ButtonModule } from 'primeng/button';
@@ -24,6 +24,17 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { registerLocaleData } from '@angular/common';
+
+import localeTr from '@angular/common/locales/tr';
+import localeFr from '@angular/common/locales/fr';
+import { LoginService } from './services/login.service';
+import { HttpProtocolPipe } from './pipes/http-protocol.pipe';
+import { PipesComponent } from './pipes/localization/pipes.component';
+
+registerLocaleData(localeTr);
+registerLocaleData(localeFr);
+
 @NgModule({
   declarations: [
     // uygulama içerisindeki component,directive,pipe buraya tanımlar.
@@ -37,6 +48,8 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     UserCardPageComponent,
     NotFoundPageComponent,
     LoginPageComponent,
+    HttpProtocolPipe,
+    PipesComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +71,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
       useClass: TokenInterceptor,
       multi: true,
     },
+    { provide: LOCALE_ID, useValue: 'tr' },
   ], // uygulama içerisindeki hizmetlerimiz buraya yazıyoruz
   bootstrap: [AppComponent], // uygulama ilk bu component çalıştır
 })
