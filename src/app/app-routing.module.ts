@@ -12,6 +12,7 @@ import { UserCardPageComponent } from './pages/user-card-page/user-card-page.com
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { ReactiveProgramlamaComponent } from './pages/reactive-programlama/reactive-programlama.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { AdminPanelGuard } from './guards/admin-panel.guard';
 
 const routes: Routes = [
   {
@@ -46,6 +47,7 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminLayoutComponent,
+    canActivate: [AdminPanelGuard], // artık tüm adm,n sayfalar bu guard tarafından korunsun
     children: [
       {
         path: '', // Admin Home page
