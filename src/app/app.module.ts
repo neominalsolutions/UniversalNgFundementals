@@ -16,13 +16,14 @@ import { UserCardPageComponent } from './pages/user-card-page/user-card-page.com
 // @ile tanımlanmış yapılar bir sınıfın angular tarafında farklı şekilde hizmet vermesini sağlar decorator denir
 import { TableModule } from 'primeng/table';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { PanelModule } from 'primeng/panel';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TokenInterceptor } from './interceptors/token.interceptor';
 @NgModule({
   declarations: [
     // uygulama içerisindeki component,directive,pipe buraya tanımlar.
@@ -51,7 +52,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PasswordModule,
     BrowserAnimationsModule, // PrimeNg animasyonlar için
   ],
-  providers: [], // uygulama içerisindeki hizmetlerimiz buraya yazıyoruz
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
+  ], // uygulama içerisindeki hizmetlerimiz buraya yazıyoruz
   bootstrap: [AppComponent], // uygulama ilk bu component çalıştır
 })
 export class AppModule {}
